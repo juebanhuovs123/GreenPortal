@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绿投青云(V2) — 智慧水务环保云服务平台</title>
+  <meta name="description" content="绿投青云是面向水务环保行业的一站式云服务平台，构建云计算、大数据、人工智能一体化服务体系。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Transparent Header overrides for Home Page */
+    .site-header { background: transparent !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; backdrop-filter: none !important; }
+    .site-header a, .site-header .nav-item { color: white !important; }
+    .site-header .btn-primary { color: white !important; background: var(--primary) !important; }
+    .site-header.scrolled { background: rgba(255,255,255,0.96) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid var(--gray-200) !important; }
+    .site-header.scrolled a, .site-header.scrolled .nav-item { color: var(--text-primary) !important; }
+    .site-header.scrolled .nav-item:hover, .site-header .nav-item:hover { color: var(--primary-light) !important; }
+    .site-header.scrolled .nav-item.active { color: var(--primary) !important; }
+
+    /* Swiper Hero Styles */
+    .hero-slider {
+      width: 100%;
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+    }
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+    .hero-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+    .hero-slider-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 800px;
+    }
+    .hero-slider-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .hero-slider-content p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      max-width: 600px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .swiper-pagination-bullet {
+      background: rgba(255,255,255,0.5);
+      opacity: 1;
+      width: 40px;
+      height: 4px;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--primary);
+      width: 64px;
+    }
+
+    /* V2 Section Titles */
+    .v2-section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .v2-section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .v2-section-title p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Visual Case & Showcase Grids */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .showcase-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 400px;
+      group: test;
+    }
+    .showcase-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .showcase-card:hover .showcase-img {
+      transform: scale(1.05);
+    }
+    .showcase-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      color: white;
+    }
+    .showcase-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+    .showcase-overlay h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .showcase-overlay p {
+      opacity: 0.8;
+      font-size: 1rem;
+      max-width: 90%;
+    }
+
+    /* Consistent Solution Layout */
+    .sol-v2-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    .sol-v2-col h3 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    .sol-v2-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .sol-v2-item {
+      padding: 24px;
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .sol-v2-item:hover {
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER (透明覆盖效果) -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">绿投青云</a>
+
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item active">首页</a>
+
+      <div class="nav-item" style="cursor:pointer;">
+        产品
+        <div class="mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-menu-tabs">
+              <div class="mega-tab active" data-mega-tab="cloud">云服务</div>
+              <div class="mega-tab" data-mega-tab="middle">中台服务</div>
+              <div class="mega-tab" data-mega-tab="ai">智能化服务</div>
+              <div class="mega-tab" data-mega-tab="water">水务环保业务</div>
+            </div>
+            <div class="mega-menu-content active" data-mega-content="cloud">
+              <a href="product.html#jsfw">弹性云主机</a>
+              <a href="product.html#jsfw">GPU云主机</a>
+              <a href="product.html#jsfw">裸金属服务器</a>
+              <a href="product.html#jsfw">容器服务</a>
+              <a href="product.html#ccfw">块存储</a>
+              <a href="product.html#ccfw">文件存储</a>
+              <a href="product.html#ccfw">对象存储</a>
+              <a href="product.html#wlfw">弹性IP</a>
+              <a href="product.html#wlfw">负载均衡</a>
+              <a href="product.html#sjkfw">Redis</a>
+              <a href="product.html#sjkfw">MongoDB</a>
+              <a href="product.html#sjkfw">RDS MySQL</a>
+              <a href="product.html#aqfw">云安全管理中心</a>
+              <a href="product.html#aqfw">Web应用防火墙</a>
+            </div>
+            <div class="mega-menu-content" data-mega-content="middle">
+              <a href="product.html#xpkfpt">星磐开发平台</a>
+              <a href="product.html#tyzx">通用中心</a>
+              <a href="product.html#iot">墨斗物联网平台</a>
+            </div>
+            <div class="mega-menu-content" data-mega-content="ai">
+              <a href="product.html#aicp">AI知识</a>
+              <a href="product.html#aicp">数字人</a>
+              <a href="product.html#aicp">清单智能匹配</a>
+              <a href="product.html#aicp">质量安全问题识别大模型</a>
+            </div>
+            <div class="mega-menu-content" data-mega-content="water">
+              <a href="product.html#water">绿投小青</a>
+              <a href="product.html#water">水务环保综合管理平台</a>
+              <a href="product.html#water">智慧管网</a>
+              <a href="product.html#water">客户经理AI助手</a>
+              <a href="product.html#water">智慧运营平台</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item" style="cursor:pointer;">
+        解决方案
+        <div class="nav-dropdown">
+          <a href="solution.html#general">通用解决方案</a>
+          <a href="solution.html#industry">行业解决方案</a>
+        </div>
+      </div>
+
+      <a href="saas.html" class="nav-item">创新产品</a>
+
+      <div class="nav-item" style="cursor:pointer;">
+        合作伙伴
+        <div class="nav-dropdown">
+          <a href="cooperate.html#digital">数字产品合作</a>
+          <a href="cooperate.html#consult">咨询及交付</a>
+        </div>
+      </div>
+
+      <a href="market.html" class="nav-item">应用市场</a>
+
+      <div class="nav-item" style="cursor:pointer;">
+        技术支持
+        <div class="nav-dropdown">
+          <a href="support.html#basic">基础服务</a>
+          <a href="support.html#ops">运营支持</a>
+        </div>
+      </div>
+
+      <a href="links.html" class="nav-item">相关链接</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#" class="btn-login">登录</a>
+      <a href="#" class="btn-register">免费注册</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO SWIPER ============ -->
+<div class="swiper hero-slider">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide" style="background-image: url('images/banner_1_city.png');">
+      <div class="hero-slide-overlay"></div>
+      <div class="container hero-slider-content">
+        <h1>汇聚智慧，绿投青云</h1>
+        <p>构建行业新生态，赋能企业云动力。提供全方位的laaS服务、PaaS能力和SaaS应用，打造云计算、大数据、人工智能一体化服务体系。</p>
+        <div class="hero-btns">
+          <a href="product.html" class="btn-primary">探索云产品 →</a>
+          <a href="solution.html" class="btn-outline" style="color:white; border-color:white;">行业解决方案</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="swiper-slide" style="background-image: url('images/banner_2_water.png');">
+      <div class="hero-slide-overlay"></div>
+      <div class="container hero-slider-content">
+        <h1>引领水务数字化转型</h1>
+        <p>依托中建三局绿投在水务环保领域的深厚积淀，以科技创新为引领，全面推进数字化与业务深度融合。构建智慧水厂、智能管网等核心业务场景解决方案。</p>
+        <div class="hero-btns">
+          <a href="product.html#water" class="btn-primary">智慧水务体系 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+<!-- ============ PRODUCT SERVICES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>产品服务</h2>
+      <p>为水务环保行业提供全方位的数字化解决方案</p>
+    </div>
+
+    <div class="product-tabs" data-tab-group="products">
+      <div class="product-tab active" data-tab="cloud">云服务</div>
+      <div class="product-tab" data-tab="middle">中台服务</div>
+      <div class="product-tab" data-tab="ai">智能化服务</div>
+      <div class="product-tab" data-tab="water">水务环保业务</div>
+    </div>
+
+    <div data-panel-group="products">
+      <!-- 云服务 -->
+      <div class="product-panel active" data-panel="cloud">
+        <div class="service-grid">
+          <a href="product.html#jsfw" class="service-card">
+            <div class="service-card-icon">🖥️</div>
+            <h4>计算服务</h4>
+            <p>提供安全、可靠、弹性、高易用的计算环境，确保服务持久稳定运行</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#ccfw" class="service-card">
+            <div class="service-card-icon">💾</div>
+            <h4>存储服务</h4>
+            <p>为您选择合适的储存服务，在数据的可用性、持久性和性能方面找到最匹配的产品</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#wlfw" class="service-card">
+            <div class="service-card-icon">🌐</div>
+            <h4>网络服务</h4>
+            <p>服务包括弹性IP、互联网带宽、负载均衡、VPN网关等网络基础设施</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#sjkfw" class="service-card">
+            <div class="service-card-icon">🗄️</div>
+            <h4>数据库服务</h4>
+            <p>提供数据库托管、管理、优化、备份恢复和安全性管理等专业服务</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#dsjfw" class="service-card">
+            <div class="service-card-icon">📊</div>
+            <h4>大数据服务</h4>
+            <p>为企业提供数据采集、存储、处理和分析等一站式解决方案</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#jjjfw" class="service-card">
+            <div class="service-card-icon">⚙️</div>
+            <h4>中间件服务</h4>
+            <p>提供分布式应用所需的通信、并发访问控制、事务控制、资源管理等服务</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#aqfw" class="service-card">
+            <div class="service-card-icon">🔒</div>
+            <h4>安全服务</h4>
+            <p>在信息安全领域中，为加强网络信息系统安全性而采取的一系列措施</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#ywfw" class="service-card">
+            <div class="service-card-icon">👨‍💻</div>
+            <h4>人工服务</h4>
+            <p>包括基础环境维护、软件运维服务、安全运维服务、运维管理服务等</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 中台服务 -->
+      <div class="product-panel" data-panel="middle">
+        <div class="service-grid">
+          <a href="product.html#xpkfpt" class="service-card">
+            <div class="service-card-icon">🏗️</div>
+            <h4>星磐开发平台</h4>
+            <p>面向企业信息化中后台管理系统的一体式解决方案</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#tyzx" class="service-card">
+            <div class="service-card-icon">🔗</div>
+            <h4>通用中心</h4>
+            <p>专注于B端行业的企业级业务能力共享服务平台</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#iot" class="service-card">
+            <div class="service-card-icon">📡</div>
+            <h4>IOT物联网平台</h4>
+            <p>面向智慧工地、智慧社区等场景，提供统一接入、统一汇聚、统一管控的设备全生命周期解决方案</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 智能化服务 -->
+      <div class="product-panel" data-panel="ai">
+        <div class="service-grid">
+          <a href="product.html#aicp" class="service-card">
+            <div class="service-card-icon">🤖</div>
+            <h4>AI知识</h4>
+            <p>基于RAG技术的增强型知识库产品，面向企业提供私域知识管理和可信知识问答服务</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#aicp" class="service-card">
+            <div class="service-card-icon">👤</div>
+            <h4>数字人</h4>
+            <p>AI驱动的数字人技术，为企业提供智能交互和虚拟形象解决方案</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#aicp" class="service-card">
+            <div class="service-card-icon">📋</div>
+            <h4>清单智能匹配</h4>
+            <p>基于AI算法的工程清单智能匹配与分析系统</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#aicp" class="service-card">
+            <div class="service-card-icon">🔍</div>
+            <h4>质量安全问题识别大模型</h4>
+            <p>利用大模型技术实现自动化的质量安全隐患识别与预警</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 水务环保业务 -->
+      <div class="product-panel" data-panel="water">
+        <div class="service-grid">
+          <a href="product.html#water" class="service-card">
+            <div class="service-card-icon">💧</div>
+            <h4>绿投小青</h4>
+            <p>AI智能客服助手，面向水务环保行业的智能问答与业务咨询平台，7×24小时在线服务</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#water" class="service-card">
+            <div class="service-card-icon">🏢</div>
+            <h4>水务环保综合管理平台</h4>
+            <p>一站式水务运营管理解决方案，覆盖供水、排水、污水处理全流程</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#water" class="service-card">
+            <div class="service-card-icon">🔧</div>
+            <h4>智慧管网</h4>
+            <p>基于物联网的城市供排水管网智能监控与运维管理系统，实现管网可视化管理</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#water" class="service-card">
+            <div class="service-card-icon">🎯</div>
+            <h4>客户经理AI助手</h4>
+            <p>面向客户经理的AI赋能工具，提升客户服务效率与业务洞察能力</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+          <a href="product.html#water" class="service-card">
+            <div class="service-card-icon">📈</div>
+            <h4>智慧运营平台</h4>
+            <p>水务环保企业数字化运营平台，实现生产运营全流程智能化管理与决策支持</p>
+            <span class="card-link">了解详情 →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-number" data-count="200" data-suffix="+">0</div>
+        <div class="stat-label">云产品服务</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="500" data-suffix="+">0</div>
+        <div class="stat-label">企业客户</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="99" data-suffix=".9%">0</div>
+        <div class="stat-label">服务可用性</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="7" data-suffix="×24h">0</div>
+        <div class="stat-label">技术支持</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLAGSHIP HARDWARE & SOFTWARE SHOWCASE ============ -->
+<section class="section">
+  <div class="container">
+    <div class="v2-section-title">
+      <h2>硬核科技，赋能核心场景</h2>
+      <p>运用物联网边缘计算和数字孪生大屏，实现对地下设施到云上管理的实时精准控制。</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <div class="showcase-img" style="background-image: url('images/concept_dashboard.png');"></div>
+        <div class="showcase-overlay">
+          <span class="showcase-tag">SaaS 平台</span>
+          <h3>水务环保综合管理平台</h3>
+          <p>基于数字孪生技术构建的高度集成运营平台，聚合所有SCADA、GIS、和告警数据，全局洞察水务动态。</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-img" style="background-image: url('images/concept_pipe.png');"></div>
+        <div class="showcase-overlay">
+          <span class="showcase-tag">IoT 物联网中心</span>
+          <h3>智慧管网边端智能</h3>
+          <p>结合精密工业传感器与边缘计算模型，精准监测水压、水质与泄漏，毫秒级响应，将管网感知提升到全新维度。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTIONS WITH UNIFIED LAYOUT ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="v2-section-title">
+      <h2>全栈数字化解决方案</h2>
+      <p>为您提供从基础系统上云到行业垂直定制的端到端方案规划与实施落地</p>
+    </div>
+    
+    <div class="sol-v2-grid">
+      <!-- 行业解决方案 -->
+      <div class="sol-v2-col">
+        <h3>🎯 行业解决方案</h3>
+        <div class="sol-v2-list">
+          <div class="sol-v2-item" style="border-left: 4px solid var(--primary);">
+            <h4 style="margin-bottom:8px;">🌊 智慧水务</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">涵盖水厂运营、管网监控及水质分析的全链路水务智慧化业务。</p>
+          </div>
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">🏙️ 智能建造</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">BIM协同、工地自动化监控及AI隐患识别综合服务。</p>
+          </div>
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">⚡ 智慧能源</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">水厂/园区能耗碳排动态调控与能效优化。</p>
+          </div>
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">🏘️ 智慧城市</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">城市网格化与基础设施智能联动运营管理。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 通用解决方案 -->
+      <div class="sol-v2-col">
+        <h3>⚙️ 通用解决方案</h3>
+        <div class="sol-v2-list">
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">☁️ 系统上云</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">传统业务系统迁移方案，提供安全防线、数据库无缝衔接。</p>
+          </div>
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">📊 数据治理</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">建立企业主数据标准，消除数据孤岛，发挥数据资产价值。</p>
+          </div>
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">🛡️ 安全合规</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">满足等保三级及国密要求的全链路纵深安全防护架构。</p>
+          </div>
+          <div class="sol-v2-item">
+            <h4 style="margin-bottom:8px;">🛠️ 高效运维</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">基于ITIL标准体系的标准化云原生应用的托管运维服务。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="solution.html" class="btn-outline">查看所有解决方案</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYPICAL CASES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="v2-section-title">
+      <h2>应用案例</h2>
+      <p>由中建三局绿投倾力打造，推动多个国家重点流域综合治理与智慧水厂标杆范例</p>
+    </div>
+    
+    <!-- Using Showcase Grid variation for Cases -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div class="showcase-card" style="height:320px;">
+        <div class="showcase-img" style="background-image: url('images/banner_2_water.png');"></div>
+        <div class="showcase-overlay" style="padding: 24px;">
+          <h4 style="font-size:1.2rem; margin-bottom:8px;">重庆地下式污水处理厂</h4>
+          <p style="font-size:0.85rem; line-height: 1.5;">分秒必争，打造新时代地下式污水处理标杆，深度融合智能化控制与监测体系。</p>
+        </div>
+      </div>
+      <div class="showcase-card" style="height:320px;">
+        <div class="showcase-img" style="background-image: url('images/banner_1_city.png');"></div>
+        <div class="showcase-overlay" style="padding: 24px;">
+          <h4 style="font-size:1.2rem; margin-bottom:8px;">武汉大规模水环境治理</h4>
+          <p style="font-size:0.85rem; line-height: 1.5;">大规模城市水体净化与生态修复综合实施，建设“数字+环保”监测中网。</p>
+        </div>
+      </div>
+      <div class="showcase-card" style="height:320px;">
+        <div class="showcase-img" style="background-image: url('images/concept_pipe.png');"></div>
+        <div class="showcase-overlay" style="padding: 24px;">
+          <h4 style="font-size:1.2rem; margin-bottom:8px;">中山小隐涌流域水污染治理</h4>
+          <p style="font-size:0.85rem; line-height: 1.5;">针对18条河涌进行大规模截流改造，全流域管网数字化精准控制漏损。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col"><h4>产品</h4><a href="product.html#cloud">云服务</a><a href="product.html#middle">中台服务</a><a href="product.html#ai">智能化服务</a><a href="product.html#water">水务环保业务</a></div>
+      <div class="footer-col"><h4>解决方案</h4><a href="solution.html#general">通用解决方案</a><a href="solution.html#industry">行业解决方案</a></div>
+      <div class="footer-col"><h4>创新产品</h4><a href="saas.html">SaaS产品</a></div>
+      <div class="footer-col"><h4>技术支持</h4><a href="support.html#basic">基础服务</a><a href="support.html#ops">运营支持</a></div>
+      <div class="footer-col"><h4>联系我们</h4><div class="footer-contact"><p>📧 service@lvtoucloud.cn</p><p>📞 400-800-8888</p></div></div>
+    </div>
+    <div class="footer-bottom">© 2024-2025 中建三局绿投-绿投青云平台</div>
+  </div>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const swiper = new Swiper('.hero-slider', {
+    loop: true,
+    effect: 'fade', /* 切换效果，更具有科技大片感 */
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+</body>
+</html>

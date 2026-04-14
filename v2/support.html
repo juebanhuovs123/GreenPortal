@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术支持 — 绿投青云</title>
+  <meta name="description" content="绿投青云技术支持，提供基础服务和运营支持文档">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .site-header { background: transparent !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; backdrop-filter: none !important; }
+    .site-header a, .site-header .nav-item { color: white !important; }
+    .site-header.scrolled { background: rgba(255,255,255,0.96) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid var(--gray-200) !important; }
+    .site-header.scrolled a, .site-header.scrolled .nav-item { color: var(--text-primary) !important; }
+    .site-header.scrolled .nav-item:hover, .site-header .nav-item:hover { color: var(--primary-light) !important; }
+    .site-header.scrolled .nav-item.active { color: var(--primary) !important; }
+  </style>
+  <style>
+    .site-header { background: transparent !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; backdrop-filter: none !important; }
+    .site-header a, .site-header .nav-item { color: white !important; }
+    .site-header.scrolled { background: rgba(255,255,255,0.96) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid var(--gray-200) !important; }
+    .site-header.scrolled a, .site-header.scrolled .nav-item { color: var(--text-primary) !important; }
+    .site-header.scrolled .nav-item:hover, .site-header .nav-item:hover { color: var(--primary-light) !important; }
+    .site-header.scrolled .nav-item.active { color: var(--primary) !important; }
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner"><a href="index.html" class="logo"><div class="logo-icon">青云</div>绿投青云</a><nav class="main-nav"><a href="index.html" class="nav-item">首页</a><a href="product.html" class="nav-item">产品</a><a href="solution.html" class="nav-item">解决方案</a><a href="saas.html" class="nav-item">创新产品</a><a href="cooperate.html" class="nav-item">合作伙伴</a><a href="market.html" class="nav-item">应用市场</a><a href="support.html" class="nav-item active">技术支持</a><a href="links.html" class="nav-item">相关链接</a></nav><div class="header-actions"><a href="#" class="btn-login">登录</a><a href="#" class="btn-register">注册</a></div></div></header>
+
+<div class="page-banner" style="background-image: url('images/banner_1_city.png');"><div class="container"><h1>技术支持</h1><div class="breadcrumb"><a href="index.html">首页</a><span class="breadcrumb-sep">/</span><span>技术支持</span></div></div></div>
+
+<section class="section">
+  <div class="container">
+    <div class="support-tabs" data-tab-group="support">
+      <div class="sup-tab active" data-tab="basic" id="basic">基础服务</div>
+      <div class="sup-tab" data-tab="ops" id="ops">运营支持</div>
+    </div>
+
+    <div data-panel-group="support">
+      <div class="product-panel active" data-panel="basic">
+        <div class="support-list">
+          <div class="support-item"><h4>绿投青云 新用户快速入门指南</h4><p>从注册账号到成功部署第一个云服务，手把手引导新用户快速上手绿投青云平台的各项功能。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 控制台使用手册</h4><p>详细介绍控制台各功能模块的使用方法，包括资源管理、费用中心、工单系统等核心操作指南。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 网络配置与安全组管理</h4><p>VPC网络规划、安全组规则配置、跨网段互联等网络管理最佳实践。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 数据备份与恢复指南</h4><p>云服务器快照、数据库自动备份、跨地域备份等数据保护方案详解。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 API接口开发文档</h4><p>API认证鉴权、接口调用规范、SDK使用指南及常见错误码说明。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 常见问题FAQ</h4><p>汇总用户高频咨询问题与解答，涵盖账号管理、产品使用、费用计算等方面。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+        </div>
+      </div>
+
+      <div class="product-panel" data-panel="ops">
+        <div class="support-list">
+          <div class="support-item"><h4>绿投青云 专有云基础服务 用户指南（运维控制台）</h4><p>绿投青云专有云运维服务管理框架以ITIL和ISO20000为基础，以适应各种管理模式为目标，实现对运维服务全过程的体系化管理。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 灾备管理中心 用户指南（备份管理平台）</h4><p>备份管理平台ASR-BR是一款专注于专有云备份与恢复的云平台产品，支持云数据库RDS、对象存储OSS、云服务器ECS等多种数据源。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 安骑士 运维指南</h4><p>安骑士（主机安全+态势感知）是一款集持续监测、深度防御、全面分析、快速响应能力于一体的云上安全管理平台。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 对象存储 OSS 运维指南</h4><p>对象存储OSS是构建在绿投青云平台上的分布式存储解决方案，提供海量数据的安全可靠存储。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 云服务器ECS 运维指南</h4><p>介绍如何查看IaaS运维相关产品的核心指标，及时掌控服务状态，了解产品检测、告警信息等概览信息。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 云数据库RDS 运维指南</h4><p>云数据库RDS运维管理最佳实践，包含性能监控、慢SQL优化、高可用配置等内容。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 云服务器ECS 用户指南</h4><p>详细的ECS云服务器使用指南，涵盖实例管理、磁盘操作、安全设置等全方位操作说明。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+          <div class="support-item"><h4>绿投青云 云数据库RDS 用户指南（MySQL版）</h4><p>RDS MySQL版数据库的完整使用说明，包括实例创建、连接管理、数据迁移等操作指南。</p><a href="#" class="read-more">了解详情 &gt;</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-inner"><div class="footer-col"><h4>产品</h4><a href="product.html">云服务</a><a href="product.html">中台服务</a><a href="product.html#water">水务环保业务</a></div><div class="footer-col"><h4>解决方案</h4><a href="solution.html">通用解决方案</a><a href="solution.html#industry">行业解决方案</a></div><div class="footer-col"><h4>联系我们</h4><div class="footer-contact"><p>📧 service@lvtoucloud.cn</p><p>📞 400-800-8888</p></div></div></div><div class="footer-bottom">© 2024-2025 中建三局绿投-绿投青云平台</div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
