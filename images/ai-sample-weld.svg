@@ -1,0 +1,57 @@
+<svg width="1280" height="880" viewBox="0 0 1280 880" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="880" fill="#A39A90"/>
+  <rect width="1280" height="880" fill="url(#shed)"/>
+  <g opacity="0.35">
+    <rect x="146" y="102" width="78" height="676" fill="#6B5D52"/>
+    <rect x="364" y="82" width="82" height="716" fill="#5E5148"/>
+    <rect x="864" y="72" width="94" height="736" fill="#5A4E47"/>
+    <rect x="1046" y="92" width="90" height="700" fill="#61554D"/>
+  </g>
+  <g stroke="#866D54" stroke-width="18" stroke-linecap="round">
+    <path d="M0 198H1280"/>
+    <path d="M0 324H1280"/>
+    <path d="M0 546H1280"/>
+    <path d="M0 732H1280"/>
+    <path d="M156 0V880"/>
+    <path d="M502 0V880"/>
+    <path d="M740 0V880"/>
+    <path d="M1112 0V880"/>
+  </g>
+  <g stroke="#B1B5BC" stroke-width="20" stroke-linecap="round">
+    <path d="M0 212H1280"/>
+    <path d="M0 338H1280"/>
+  </g>
+  <g fill="#CBD0D7" opacity="0.9">
+    <circle cx="438" cy="186" r="16"/>
+    <circle cx="662" cy="192" r="16"/>
+    <circle cx="860" cy="196" r="16"/>
+    <circle cx="462" cy="330" r="16"/>
+    <circle cx="624" cy="336" r="16"/>
+    <circle cx="852" cy="340" r="16"/>
+  </g>
+
+  <rect x="12" y="164" width="1268" height="504" stroke="#67B7FF" stroke-width="4"/>
+  <rect x="136" y="392" width="404" height="330" stroke="#41D35F" stroke-width="4"/>
+  <rect x="274" y="488" width="528" height="352" stroke="#5AA0FF" stroke-width="4"/>
+
+  <g font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="28" font-weight="700">
+    <rect x="18" y="126" width="344" height="44" rx="10" fill="#5AA0FF"/>
+    <text x="38" y="156" fill="white">混凝土块随压重未固定，存在坠落风险</text>
+
+    <rect x="366" y="126" width="302" height="44" rx="10" fill="#33C5FF"/>
+    <text x="386" y="156" fill="white">焊接接头存在烧伤，焊渣未清理</text>
+
+    <rect x="144" y="354" width="254" height="44" rx="10" fill="#41D35F"/>
+    <text x="164" y="384" fill="white">钢筋绑扎不规范，铁丝松动</text>
+
+    <rect x="280" y="450" width="284" height="44" rx="10" fill="#5AA0FF"/>
+    <text x="300" y="480" fill="white">支撑梁晃动明显，稳定性不足</text>
+  </g>
+
+  <defs>
+    <linearGradient id="shed" x1="148" y1="64" x2="1104" y2="812" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E6C5F"/>
+      <stop offset="1" stop-color="#BEB4AC"/>
+    </linearGradient>
+  </defs>
+</svg>

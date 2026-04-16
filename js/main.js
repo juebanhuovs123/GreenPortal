@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============ Header Scroll Effect ============
   const header = document.querySelector('.site-header');
   if (header) {
-    window.addEventListener('scroll', () => {
+    const syncHeaderState = () => {
       header.classList.toggle('scrolled', window.scrollY > 10);
-    });
+    };
+    syncHeaderState();
+    window.addEventListener('scroll', syncHeaderState);
   }
 
   // ============ Tab Switching (generic) ============
@@ -40,6 +42,35 @@ document.addEventListener('DOMContentLoaded', () => {
       parent.querySelectorAll('.mega-menu-content').forEach(c => {
         c.classList.toggle('active', c.dataset.megaContent === target);
       });
+    });
+  });
+
+  // ============ Top Nav Parent Click-through ============
+  document.querySelectorAll('.nav-item[data-nav-target]').forEach(item => {
+    const target = item.dataset.navTarget;
+    if (!target) return;
+
+    item.tabIndex = 0;
+    item.setAttribute('role', 'link');
+
+    const goToTarget = () => {
+      window.location.href = target;
+    };
+
+    item.addEventListener('click', (event) => {
+      const clickTarget = event.target instanceof Element ? event.target : null;
+      if (clickTarget && clickTarget.closest('.nav-dropdown, .mega-menu')) {
+        return;
+      }
+      goToTarget();
+    });
+
+    item.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') {
+        return;
+      }
+      event.preventDefault();
+      goToTarget();
     });
   });
 
@@ -79,10 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-item').forEach(item => {
     const href = item.getAttribute('href');
-    if (href && href.includes(currentPage)) {
+    const navTarget = item.dataset.navTarget;
+    if ((href && href.includes(currentPage)) || (navTarget && navTarget.includes(currentPage))) {
       item.classList.add('active');
     }
   });
+
+  // ============ Home hero slider ============
+  const heroSlider = document.querySelector('.hero-slider');
+  if (heroSlider && typeof Swiper !== 'undefined' && !heroSlider.classList.contains('swiper-initialized')) {
+    new Swiper(heroSlider, {
+      loop: true,
+      speed: 1200,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      autoplay: {
+        delay: 5600,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: heroSlider.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+    });
+  }
 
   // ============ Animate on scroll ============
   const observer = new IntersectionObserver((entries) => {
@@ -94,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.service-card, .product-card, .solution-card, .feature-card, .stat-item, .support-item, .market-card, .saas-card').forEach(el => {
+  document.querySelectorAll('.service-card, .product-card, .solution-card, .feature-card, .stat-item, .support-item, .market-card, .saas-card, .capability-card, .insight-card, .matrix-card, .process-step, .section-shell, .demo-panel, .vision-panel').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';

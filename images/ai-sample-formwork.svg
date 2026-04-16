@@ -1,0 +1,45 @@
+<svg width="1280" height="880" viewBox="0 0 1280 880" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="880" fill="#D9D2C6"/>
+  <rect width="1280" height="880" fill="url(#ground)"/>
+  <rect x="122" y="90" width="668" height="528" fill="#8C4A40"/>
+  <rect x="122" y="90" width="668" height="528" fill="url(#panel)"/>
+  <g stroke="#6A312B" stroke-width="10" opacity="0.76">
+    <path d="M182 90V618"/>
+    <path d="M290 90V618"/>
+    <path d="M398 90V618"/>
+    <path d="M506 90V618"/>
+    <path d="M614 90V618"/>
+    <path d="M722 90V618"/>
+    <path d="M122 174H790"/>
+    <path d="M122 280H790"/>
+    <path d="M122 386H790"/>
+    <path d="M122 492H790"/>
+  </g>
+  <path d="M314 498C362 462 452 454 558 466C664 478 786 512 858 560V796H260C230 702 236 584 314 498Z" fill="#B7B3AD"/>
+  <path d="M338 528C412 502 534 500 664 536C724 552 794 582 858 626V782H326C298 708 302 596 338 528Z" fill="#A4A19C"/>
+  <path d="M844 396H1198V842H844V396Z" stroke="#72E24B" stroke-width="4"/>
+  <path d="M806 566H1280V880H806V566Z" stroke="#ED68F7" stroke-width="4"/>
+  <path d="M182 240H1208V842H182V240Z" stroke="#A46BFF" stroke-width="4"/>
+
+  <g font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="28" font-weight="700">
+    <rect x="188" y="200" width="436" height="44" rx="10" fill="#A46BFF"/>
+    <text x="208" y="230" fill="white">模板拆除后残留混凝土浆液未清理，地面湿滑</text>
+
+    <rect x="846" y="356" width="366" height="44" rx="10" fill="#72E24B"/>
+    <text x="866" y="386" fill="white">现场杂物堆积，存在交叉绊倒风险</text>
+
+    <rect x="810" y="526" width="318" height="44" rx="10" fill="#ED68F7"/>
+    <text x="830" y="556" fill="white">地面散落钢筋头，存在刺伤风险</text>
+  </g>
+
+  <defs>
+    <linearGradient id="ground" x1="96" y1="58" x2="1060" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1E7DB"/>
+      <stop offset="1" stop-color="#C9BEAF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="122" y1="90" x2="790" y2="618" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#94453D"/>
+      <stop offset="1" stop-color="#6B352F"/>
+    </linearGradient>
+  </defs>
+</svg>

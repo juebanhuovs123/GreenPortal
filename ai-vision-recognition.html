@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI视觉识别 — 绿投青云</title>
+  <meta name="description" content="AI视觉识别介绍与试用页，支持内置图片样例选择，以及图片和视频上传演示识别。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-banner ai-vision-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">青云</div>绿投青云</a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item">首页</a>
+      <a href="product.html" class="nav-item">产品</a>
+      <a href="solution.html" class="nav-item">解决方案</a>
+      <a href="saas.html" class="nav-item active">创新产品</a>
+      <a href="cooperate.html" class="nav-item">合作伙伴</a>
+      <a href="market.html" class="nav-item">应用市场</a>
+      <a href="support.html" class="nav-item">技术支持</a>
+      <a href="links.html" class="nav-item">相关链接</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="btn-login">登录</a>
+      <a href="#" class="btn-register">注册</a>
+    </div>
+  </div>
+</header>
+
+<section class="feature-hero-slider swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image:url('images/banner_1_city.png');">
+      <div class="hero-slide-overlay"></div>
+      <div class="container">
+        <div class="hero-slider-content">
+          <span class="product-kicker">AI Vision Demo</span>
+          <h1>可演示、可体验的 AI 视觉识别工作台</h1>
+          <p>面向安全巡检、管网构件识别和作业质量复核场景，提供高完成度的网页化演示入口，便于现场讲解和方案展示。</p>
+          <div class="chip-row">
+            <span class="chip">安全巡检</span>
+            <span class="chip">构件识别</span>
+            <span class="chip">质量复核</span>
+          </div>
+          <div class="hero-btns">
+            <a href="#demo" class="btn-primary">进入试用</a>
+            <a href="saas.html" class="btn-outline">返回创新产品</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide" style="background-image:url('images/banner_2_water.png');">
+      <div class="hero-slide-overlay"></div>
+      <div class="container">
+        <div class="hero-slider-content">
+          <span class="product-kicker">Built-in Samples</span>
+          <h1>内置样例一键载入，演示更顺手</h1>
+          <p>除了上传图片和视频，还预置了多个场景样例，用户可以直接点击选择，快速体验识别流程与结果面板。</p>
+          <div class="chip-row">
+            <span class="chip">内置图片样例</span>
+            <span class="chip">上传图片</span>
+            <span class="chip">上传视频</span>
+          </div>
+          <div class="hero-btns">
+            <a href="#samples" class="btn-primary">查看样例</a>
+            <a href="#demo" class="btn-outline">立即演示</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide" style="background-image:url('images/hero.png');">
+      <div class="hero-slide-overlay"></div>
+      <div class="container">
+        <div class="hero-slider-content">
+          <span class="product-kicker">Connectable</span>
+          <h1>先做体验，再接入真实视觉模型</h1>
+          <p>当前页面聚焦交互演示与业务呈现，后续可以保留同一套界面结构，平滑接入真实识别引擎与后端推理接口。</p>
+          <div class="chip-row">
+            <span class="chip">前端演示版</span>
+            <span class="chip">结果面板</span>
+            <span class="chip">可扩展接口</span>
+          </div>
+          <div class="hero-btns">
+            <a href="#overview" class="btn-primary">产品介绍</a>
+            <a href="#demo" class="btn-outline">试用界面</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</section>
+
+<section class="product-hero product-hero-secondary" id="overview">
+  <div class="container product-hero-grid">
+    <div class="product-hero-copy">
+      <span class="product-kicker">Vision Overview</span>
+      <h1>AI视觉识别</h1>
+      <p>面向现场安全、管网巡检和作业质量检查场景，支持内置样例选择、图片上传和视频上传演示识别。当前为前端试用版，重点展示“文件载入 - 预览 - 识别结果 - 风险建议”的完整交互链路。</p>
+      <div class="badge-row">
+        <span class="badge-pill">内置样例选择</span>
+        <span class="badge-pill">图片上传</span>
+        <span class="badge-pill">视频上传</span>
+        <span class="badge-pill">演示结果输出</span>
+      </div>
+      <div class="product-actions">
+        <a href="#demo" class="btn-primary">开始试用</a>
+        <a href="saas.html" class="btn-outline">返回创新产品</a>
+      </div>
+    </div>
+
+    <aside class="product-hero-panel">
+      <h3>试用说明</h3>
+      <div class="app-stat-grid">
+        <div class="app-stat"><strong>图片/视频</strong><span>双类型试用</span></div>
+        <div class="app-stat"><strong>3 类场景</strong><span>安全、管网、质量</span></div>
+        <div class="app-stat"><strong>内置样例</strong><span>可直接点击体验</span></div>
+        <div class="app-stat"><strong>可扩展</strong><span>支持接真实模型</span></div>
+      </div>
+      <div class="bullet-list" style="margin-top:18px;">
+        <div class="bullet-item"><span class="bullet-dot"></span><p>支持常见图片格式和视频文件上传，并在页面中直接预览。</p></div>
+        <div class="bullet-item"><span class="bullet-dot"></span><p>样例适合用于项目汇报、客户演示和门户体验入口。</p></div>
+        <div class="bullet-item"><span class="bullet-dot"></span><p>当前结果为演示版模拟输出，后续可接真实视觉模型。</p></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section app-section">
+  <div class="container app-grid-2">
+    <div class="section-shell">
+      <h3>应用方向</h3>
+      <div class="bullet-list">
+        <div class="bullet-item"><span class="bullet-dot"></span><p>安全巡检：识别人员防护、围挡、警示区和积水等安全要素。</p></div>
+        <div class="bullet-item"><span class="bullet-dot"></span><p>管网构件识别：识别井盖、检查井、液位迹象和疑似缺陷线索。</p></div>
+        <div class="bullet-item"><span class="bullet-dot"></span><p>作业质量检查：辅助核对设备摆放、清检修过程和现场恢复状态。</p></div>
+      </div>
+    </div>
+
+    <div class="section-shell">
+      <h3>交互能力</h3>
+      <div class="badge-row" style="margin-bottom:18px;">
+        <span class="badge-pill">上传即预览</span>
+        <span class="badge-pill">场景切换</span>
+        <span class="badge-pill">识别标记</span>
+        <span class="badge-pill">结果建议</span>
+      </div>
+      <p class="subtle-text">页面把识别体验拆成更顺畅的三个阶段：先选择样例或上传素材，再切换场景并执行识别，最后查看风险等级、目标数量与复核建议。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt app-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>能力特性</h2>
+      <p>本页重点展示一个“可先演示再落地”的视觉 AI 试用壳子，方便快速讲清楚产品形态和业务价值。</p>
+    </div>
+    <div class="app-capability-grid">
+      <div class="capability-card">
+        <div class="capability-icon">01</div>
+        <h4>内置样例</h4>
+        <p>预置多个图片样例，进入页面后即可直接体验，不需要先准备测试素材。</p>
+      </div>
+      <div class="capability-card">
+        <div class="capability-icon">02</div>
+        <h4>多媒体预览</h4>
+        <p>图片和视频都能在页面中直接预览，演示过程更直观，也更适合展示给客户。</p>
+      </div>
+      <div class="capability-card">
+        <div class="capability-icon">03</div>
+        <h4>结果面板</h4>
+        <p>输出风险等级、识别目标、场景标签和复核建议，形成完整的结果呈现逻辑。</p>
+      </div>
+      <div class="capability-card">
+        <div class="capability-icon">04</div>
+        <h4>可接模型</h4>
+        <p>当前前端结构已经适合对接真实 AI 视觉识别接口，后续可保留界面直接升级。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section app-section" id="demo">
+  <div class="container">
+    <div class="section-title">
+      <h2>视觉识别试用</h2>
+      <p>当前为演示模式，既支持上传图片和视频，也提供了内置图片样例，便于直接完成识别流程演示。</p>
+    </div>
+
+    <div class="vision-shell" data-vision-demo>
+      <div class="vision-panel">
+        <div class="form-field">
+          <label for="vision-mode">识别场景</label>
+          <select id="vision-mode" data-vision-mode>
+            <option value="safety">安全巡检识别</option>
+            <option value="pipe">管网构件识别</option>
+            <option value="quality">作业质量识别</option>
+          </select>
+        </div>
+
+        <div class="vision-action-bar">
+          <div class="vision-action-copy">
+            <strong>选中样例后即可直接识别</strong>
+            <div class="upload-meta" data-vision-file>已为你预载一个内置样例，可直接开始识别</div>
+          </div>
+          <button type="button" class="btn-primary" data-vision-run>开始识别</button>
+        </div>
+
+        <div id="samples" class="sample-gallery">
+          <button type="button" class="sample-card" data-vision-sample data-sample-key="open_well" data-sample-src="images/ai-real-open-well.png" data-sample-name="井筒敞口隐患原图" data-sample-mode="safety" data-sample-type="image/png" data-sample-size="1001610" data-sample-tags="井口敞开|缺少盖板|井内积水">
+            <div class="sample-thumb" style="background-image:url('images/ai-real-open-well.png');"></div>
+            <div class="sample-card-body">
+              <strong>井筒敞口隐患原图</strong>
+              <p>选择后点击识别，自动框出井口敞开、井壁拼缝异常和井内积水问题。</p>
+            </div>
+          </button>
+          <button type="button" class="sample-card" data-vision-sample data-sample-key="rebar_grate" data-sample-src="images/ai-real-rebar-grate.png" data-sample-name="洞口钢筋盖网原图" data-sample-mode="safety" data-sample-type="image/png" data-sample-size="1011071" data-sample-tags="洞口未封闭|钢筋临时覆盖|坠落风险">
+            <div class="sample-thumb" style="background-image:url('images/ai-real-rebar-grate.png');"></div>
+            <div class="sample-card-body">
+              <strong>洞口钢筋盖网原图</strong>
+              <p>选择后点击识别，自动框出洞口未封闭、钢筋间隙过大和临边防护缺失。</p>
+            </div>
+          </button>
+          <button type="button" class="sample-card" data-vision-sample data-sample-key="well_guard" data-sample-src="images/ai-real-manhole.jpg" data-sample-name="井口防护隐患原图" data-sample-mode="safety" data-sample-type="image/jpeg" data-sample-size="6809484" data-sample-tags="井口防护|坠落风险|围挡不足">
+            <div class="sample-thumb" style="background-image:url('images/ai-real-manhole.jpg');"></div>
+            <div class="sample-card-body">
+              <strong>井口防护隐患原图</strong>
+              <p>选择后点击识别，自动框出围挡不足、井口防护和人员临边风险。</p>
+            </div>
+          </button>
+          <button type="button" class="sample-card" data-vision-sample data-sample-key="weld_joint" data-sample-src="images/ai-real-weld.jpg" data-sample-name="钢筋焊接缺陷原图" data-sample-mode="quality" data-sample-type="image/jpeg" data-sample-size="1658853" data-sample-tags="焊接缺陷|绑扎松动|支撑不稳">
+            <div class="sample-thumb" style="background-image:url('images/ai-real-weld.jpg');"></div>
+            <div class="sample-card-body">
+              <strong>钢筋焊接缺陷原图</strong>
+              <p>选择后点击识别，自动框出焊接烧伤、焊渣残留与支撑稳定问题。</p>
+            </div>
+          </button>
+        </div>
+
+        <p class="subtle-text" style="margin: -6px 0 16px;">上面平铺的是你提供的现场图样例。点击任意一张后，再点“开始识别”，页面会自动叠加隐患框。</p>
+
+        <label class="upload-zone" data-upload-zone>
+          <strong>上传图片或视频</strong>
+          <span>支持点击选择，也支持把文件拖拽到这里</span>
+          <input type="file" accept="image/*,video/*" data-vision-input hidden>
+        </label>
+
+        <p class="demo-note">说明：内置样例更适合快速演示；如需测试自己的素材，也可以继续上传图片或视频。</p>
+      </div>
+
+      <div class="vision-panel">
+        <div class="vision-preview-stage" data-vision-preview-stage>
+          <div class="empty-state" data-vision-empty>选择样例或上传文件后，这里会显示预览内容。</div>
+          <div class="vision-media" data-vision-media hidden>
+            <img data-vision-image hidden alt="视觉识别预览">
+            <video data-vision-video hidden muted playsinline preload="metadata"></video>
+            <div class="vision-boxes" data-vision-boxes></div>
+          </div>
+        </div>
+
+        <div class="demo-status-card" style="margin-top:18px;">
+          <h3 data-vision-title>等待识别</h3>
+          <p data-vision-summary>选择场景并载入素材后，这里会展示演示版识别结果摘要。</p>
+          <div class="chip-row" data-vision-tags></div>
+        </div>
+
+        <div class="demo-metrics">
+          <div class="demo-metric"><strong data-vision-risk>--</strong><span>风险等级</span></div>
+          <div class="demo-metric"><strong data-vision-targets>--</strong><span>识别目标</span></div>
+          <div class="demo-metric"><strong data-vision-format>--</strong><span>文件类型</span></div>
+          <div class="demo-metric"><strong data-vision-scene>--</strong><span>识别场景</span></div>
+        </div>
+
+        <div class="demo-list">
+          <h5>识别结果</h5>
+          <div class="vision-findings" data-vision-findings></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>创新产品</h4>
+        <a href="saas.html">创新产品总览</a>
+        <a href="smart-pipe-platform.html">智慧管网平台</a>
+        <a href="pipe-maintenance-equipment.html">管网清检修智能化作业装备</a>
+      </div>
+      <div class="footer-col">
+        <h4>识别场景</h4>
+        <a href="#demo">安全巡检</a>
+        <a href="#demo">管网构件识别</a>
+        <a href="#demo">作业质量复核</a>
+      </div>
+      <div class="footer-col">
+        <h4>解决方案</h4>
+        <a href="solution.html">通用解决方案</a>
+        <a href="solution.html#industry">行业解决方案</a>
+      </div>
+      <div class="footer-col">
+        <h4>联系我们</h4>
+        <div class="footer-contact">
+          <p>service@lvtoucloud.cn</p>
+          <p>400-800-8888</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024-2025 中建三局绿投 - 绿投青云平台</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/innovation.js"></script>
+</body>
+</html>

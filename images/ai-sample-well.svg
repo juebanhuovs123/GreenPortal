@@ -1,0 +1,59 @@
+<svg width="1280" height="880" viewBox="0 0 1280 880" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="880" fill="#A77958"/>
+  <rect width="1280" height="880" fill="url(#soil)"/>
+  <g opacity="0.34" stroke="#4F5359" stroke-width="8">
+    <path d="M108 132H1190"/>
+    <path d="M108 250H1190"/>
+    <path d="M108 368H1190"/>
+    <path d="M108 486H1190"/>
+    <path d="M108 604H1190"/>
+    <path d="M108 722H1190"/>
+    <path d="M168 92V812"/>
+    <path d="M310 92V812"/>
+    <path d="M452 92V812"/>
+    <path d="M594 92V812"/>
+    <path d="M736 92V812"/>
+    <path d="M878 92V812"/>
+    <path d="M1020 92V812"/>
+  </g>
+  <rect x="372" y="278" width="494" height="360" rx="28" fill="#60656C"/>
+  <rect x="392" y="300" width="454" height="318" rx="24" fill="#7A7F84"/>
+  <circle cx="620" cy="454" r="192" fill="#B6A07A" stroke="#79664A" stroke-width="18"/>
+  <circle cx="620" cy="454" r="156" fill="url(#cover)"/>
+  <path d="M466 646L788 646" stroke="#42464C" stroke-width="10" opacity="0.6"/>
+  <path d="M468 694L788 694" stroke="#42464C" stroke-width="10" opacity="0.6"/>
+  <g fill="#D0D2D6" opacity="0.9">
+    <circle cx="1062" cy="104" r="18"/>
+    <circle cx="1110" cy="104" r="18"/>
+  </g>
+
+  <rect x="92" y="80" width="1096" height="760" stroke="#5AA0FF" stroke-width="4"/>
+  <rect x="198" y="246" width="734" height="518" stroke="#8D68FF" stroke-width="4"/>
+  <rect x="344" y="300" width="640" height="540" stroke="#FFC440" stroke-width="4"/>
+  <rect x="962" y="526" width="228" height="310" stroke="#8EE23D" stroke-width="4"/>
+
+  <g font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="28" font-weight="700">
+    <rect x="94" y="42" width="312" height="44" rx="10" fill="#5AA0FF"/>
+    <text x="116" y="72" fill="white">钢筋网未形成有效围挡，防护不足</text>
+
+    <rect x="196" y="208" width="266" height="44" rx="10" fill="#8D68FF"/>
+    <text x="216" y="238" fill="white">井口未设置标准防护栏杆</text>
+
+    <rect x="348" y="262" width="410" height="44" rx="10" fill="#FFC440"/>
+    <text x="368" y="292" fill="white">井盖边缘与基础不密实，可能松动</text>
+
+    <rect x="966" y="486" width="252" height="44" rx="10" fill="#7ED321"/>
+    <text x="986" y="516" fill="white">人员靠近井口，存在坠落风险</text>
+  </g>
+
+  <defs>
+    <linearGradient id="soil" x1="160" y1="96" x2="1104" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B98963"/>
+      <stop offset="1" stop-color="#8C6243"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="494" y1="338" x2="748" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8C7A5"/>
+      <stop offset="1" stop-color="#A98858"/>
+    </linearGradient>
+  </defs>
+</svg>
